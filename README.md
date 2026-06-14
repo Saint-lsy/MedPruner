@@ -115,6 +115,23 @@ Key environment variables:
 | `COMPRESSION` | Pruning method, set to `medpruner` to enable |
 | `CUDA_VISIBLE_DEVICES` | Available GPUs; multiple GPUs enable data parallelism |
 
-## License
 
-This project is open-sourced under the [Mulan Permissive Software License v2](http://license.coscl.org.cn/MulanPSL2).
+## 🎈Acknowledgements
+Greatly appreciate the tremendous effort for the following projects!
+- [Visionzip](https://github.com/JIA-Lab-research/VisionZip)
+- [Hulu-Med](https://github.com/ZJUI-AI4H/Hulu-Med)
+- [MedGemma](https://huggingface.co/google/medgemma-1.5-4b-it)
+
+
+## Citation
+```
+@misc{liu2026medprunertrainingfreehierarchicaltoken,
+      title={MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models}, 
+      author={Shengyuan Liu and Zanting Ye and Yunrui Lin and Chen Hu and Wanting Geng and Xu Han and Bulat Ibragimov and Yefeng Zheng and Yixuan Yuan},
+      year={2026},
+      eprint={2603.11625},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.11625}, 
+}
+```
