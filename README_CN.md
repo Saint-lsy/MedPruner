@@ -1,17 +1,27 @@
-**[English](README.md)**
+<p align="center">
+  <img src="assets/medpruner_logo.png" alt="MedPruner logo" width="220">
+</p>
 
-## Med3D / MedPruner — 医学视觉语言模型评估与剪枝工具包
+**🌐 [English](README.md)**
 
-Med3D 是一个面向 3D 医学图像（CT/MRI）的视觉语言模型评估框架，内置 **MedPruner** 视觉 token 剪枝模块，在保持诊断精度的同时显著降低推理成本。
+# ✂️ MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models
 
-## 核心特性
+[📄 论文](https://arxiv.org/abs/2603.11625) | [💻 代码](https://github.com/Saint-lsy/MedPruner) | [📦 数据集](https://modelscope.cn/models/Med-Team/Hulu-Med)
+
+![MedPruner 方法总览](assets/medpruner_overview.png)
+
+MedPruner 是一种训练无关的分层视觉 token 剪枝方法，面向 3D 医学影像理解任务提升视觉语言模型的推理效率。它先通过基于锚点帧的切片级过滤去除冗余层间信息，再通过 token 级动态信息核选择压缩视觉 token，在保持诊断精度的同时降低推理成本。
+
+本仓库同时包含 Med3D，这是一个面向 3D 医学图像（CT/MRI）的视觉语言模型评估框架，并内置 MedPruner 剪枝支持。
+
+## ✨ 核心特性
 
 - **3D 医学图像评估**: 支持 CT/MRI 等 3D 体积数据的端到端评估（Amos、M3D、3DRad）
 - **视觉 Token 剪枝 (MedPruner)**: 支持切片级 (slice) 和 token 级两层剪枝策略，减少视觉 token 数量，降低推理显存和时间
 - **多模型支持**: 统一接口接入 Qwen3-VL、HuluMed、MedGemma 三款医学视觉语言模型
 - **多 GPU 并行**: 支持数据分片的多 GPU 并行评估
 
-## 环境安装
+## 🛠️ 环境安装
 
 ```bash
 # 创建 conda 环境
@@ -32,7 +42,7 @@ pip install -r requirements.txt
 cd medpruner && pip install -e .
 ```
 
-## 数据集
+## 📚 数据集
 
 数据集下载: [Hulu Eval Dataset](https://modelscope.cn/models/Med-Team/Hulu-Med)
 
@@ -48,7 +58,7 @@ data/Eval/
     └── ...
 ```
 
-## 支持的模型
+## 🤖 支持的模型
 
 | 模型 | 后端 | MedPruner 剪枝 |
 |------|------|:---:|
@@ -56,7 +66,7 @@ data/Eval/
 | HuluMed Qwen2 | transformers | ✓ |
 | MedGemma | transformers | ✓ |
 
-## 支持的基准测试
+## 🧪 支持的基准测试
 
 | 数据集 | 模态 | 描述 |
 |--------|------|------|
@@ -64,7 +74,7 @@ data/Eval/
 | M3D | 3D CT | 全身 CT 影像问答 |
 | 3DRad | 3D CT | 放射影像报告生成 |
 
-## MedPruner 剪枝配置
+## ⚙️ MedPruner 剪枝配置
 
 MedPruner 通过两层剪枝减少视觉 token 数量：
 
@@ -93,7 +103,7 @@ MedPruner 通过两层剪枝减少视觉 token 数量：
 
 剪枝率说明：评估完成后会输出 `compression_rate`（切片剪枝保留率）、`dyn_token_rate`（token 剪枝保留率）、`select_rate`（综合保留率）。
 
-## 评估
+## 🚀 评估
 
 ```bash
 cd MedUniEval
@@ -115,6 +125,16 @@ bash ./eval_M3D_chunked.sh
 | `COMPRESSION` | 剪枝⽅法，设为 `medpruner` 启⽤剪枝 |
 | `CUDA_VISIBLE_DEVICES` | 可⽤ GPU，多个 GPU 时⾃动数据并⾏ |
 
-## 许可证
+## 📖 Citation
 
-本项目基于 [木兰宽松许可证 v2](http://license.coscl.org.cn/MulanPSL2) 开源。
+```bibtex
+@misc{liu2026medprunertrainingfreehierarchicaltoken,
+      title={MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models}, 
+      author={Shengyuan Liu and Zanting Ye and Yunrui Lin and Chen Hu and Wanting Geng and Xu Han and Bulat Ibragimov and Yefeng Zheng and Yixuan Yuan},
+      year={2026},
+      eprint={2603.11625},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.11625}, 
+}
+```

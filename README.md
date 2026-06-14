@@ -1,17 +1,27 @@
-**[中文](README_CN.md)**
+<p align="center">
+  <img src="assets/medpruner_logo.png" alt="MedPruner logo" width="220">
+</p>
 
-## Med3D / MedPruner — Medical VLM Evaluation & Pruning Toolkit
+**🌐 [中文](README_CN.md)**
 
-Med3D is an evaluation framework for 3D medical imaging (CT/MRI) vision-language models, with a built-in **MedPruner** visual token pruning module that significantly reduces inference cost while preserving diagnostic accuracy.
+# ✂️ MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models
 
-## Key Features
+[📄 Paper](https://arxiv.org/abs/2603.11625) | [💻 Code](https://github.com/Saint-lsy/MedPruner) | [📦 Dataset](https://modelscope.cn/models/Med-Team/Hulu-Med)
+
+![MedPruner overview](assets/medpruner_overview.png)
+
+MedPruner is a training-free hierarchical visual token pruning method for efficient 3D medical image understanding in vision-language models. It removes redundant inter-slice information with anchor-based filtering, then performs token-level dynamic information nucleus selection to reduce inference cost while preserving diagnostic accuracy.
+
+This repository also includes Med3D, an evaluation framework for 3D medical imaging (CT/MRI) vision-language models, with built-in MedPruner support.
+
+## ✨ Key Features
 
 - **3D Medical Image Evaluation**: End-to-end evaluation on 3D volumetric data including CT and MRI (Amos, M3D, 3DRad)
 - **Visual Token Pruning (MedPruner)**: Two-level pruning strategy combining slice-level and token-level compression to reduce visual tokens, memory usage, and inference time
 - **Multi-Model Support**: Unified interface for Qwen3-VL, HuluMed, and MedGemma medical VLMs
 - **Multi-GPU Parallelism**: Data-parallel evaluation across multiple GPUs
 
-## Setup
+## 🛠️ Setup
 
 ```bash
 # Create conda environment
@@ -32,7 +42,7 @@ pip install -r requirements.txt
 cd medpruner && pip install -e .
 ```
 
-## Datasets
+## 📚 Datasets
 
 Dataset download: [Hulu Eval Dataset](https://modelscope.cn/models/Med-Team/Hulu-Med)
 
@@ -48,7 +58,7 @@ data/Eval/
     └── ...
 ```
 
-## Supported Models
+## 🤖 Supported Models
 
 | Model | Backend | MedPruner |
 |-------|---------|:---:|
@@ -56,7 +66,7 @@ data/Eval/
 | HuluMed Qwen2 | transformers | ✓ |
 | MedGemma | transformers | ✓ |
 
-## Supported Benchmarks
+## 🧪 Supported Benchmarks
 
 | Dataset | Modality | Description |
 |---------|----------|-------------|
@@ -64,7 +74,7 @@ data/Eval/
 | M3D | 3D CT | Full-body CT visual question answering |
 | 3DRad | 3D CT | Radiology report generation |
 
-## MedPruner Configuration
+## ⚙️ MedPruner Configuration
 
 MedPruner reduces visual tokens through two pruning levels:
 
@@ -93,7 +103,7 @@ Configuration file `config/config.json`:
 
 Pruning rates: after evaluation, `compression_rate` (slice pruning retention), `dyn_token_rate` (token pruning retention), and `select_rate` (overall retention) are reported.
 
-## Evaluation
+## 🚀 Evaluation
 
 ```bash
 cd MedUniEval
@@ -116,14 +126,14 @@ Key environment variables:
 | `CUDA_VISIBLE_DEVICES` | Available GPUs; multiple GPUs enable data parallelism |
 
 
-## 🎈Acknowledgements
+## 🙏 Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
 - [Visionzip](https://github.com/JIA-Lab-research/VisionZip)
 - [Hulu-Med](https://github.com/ZJUI-AI4H/Hulu-Med)
 - [MedGemma](https://huggingface.co/google/medgemma-1.5-4b-it)
 
 
-## Citation
+## 📖 Citation
 ```
 @misc{liu2026medprunertrainingfreehierarchicaltoken,
       title={MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models}, 
