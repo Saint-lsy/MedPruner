@@ -2,11 +2,12 @@
   <img src="assets/medpruner_logo.png" alt="MedPruner logo" width="220">
 </p>
 
-**🌐 [English](README.md)**
+# [MICCAI 26] MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models
 
-# ✂️ MedPruner: Training-Free Hierarchical Token Pruning for Efficient 3D Medical Image Understanding in Vision-Language Models
-
-[📄 论文](https://arxiv.org/abs/2603.11625) | [💻 代码](https://github.com/Saint-lsy/MedPruner) | [📦 数据集](https://modelscope.cn/models/Med-Team/Hulu-Med)
+<p align="center">
+  <a href="https://arxiv.org/abs/2603.11625"><img src="https://img.shields.io/badge/arXiv-2603.11625-b31b1b.svg?style=flat-square" alt="arXiv"></a>
+  <a href="README.md"><img src="https://img.shields.io/badge/Language-English-blue?style=flat-square" alt="English README"></a>
+</p>
 
 ![MedPruner 方法总览](assets/medpruner_overview.png)
 
