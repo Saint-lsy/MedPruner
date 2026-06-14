@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medpruner"
+version = "0.1.0"
+description = "Medical Vision-Language Model Pruning Toolkit"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.4.0",
+    "transformers>=4.51.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "datasets>=2.21.0",
+    "accelerate>=1.7.0",
+    "peft>=0.4.0",
+    "nibabel>=5.3.2",
+    "decord>=0.6.0",
+    "opencv-python>=4.6.0",
+]
+
+[tool.setuptools]
+package-dir = {"medpruner" = "."}
+packages = ["medpruner", "medpruner.Hulu", "medpruner.MedGemma"]

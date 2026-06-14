@@ -1,0 +1,8 @@
+{
+  "medpruner": {
+    "slice_compose": true,
+    "token_compose": true,
+    "tau": 0.9,
+    "gamma": 0.05
+  }
+}

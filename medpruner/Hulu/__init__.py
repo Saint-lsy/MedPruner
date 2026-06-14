@@ -1,0 +1,1 @@
+from .hulumed_qwen2 import HulumedQwen2ForCausalLM
